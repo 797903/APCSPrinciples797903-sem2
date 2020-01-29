@@ -7,14 +7,14 @@ function setup(){
 // put start code here
 var cnv = createCanvas(1000, 800);
 cnv.position((windowWidth-width)/2, 30);
-background(20, 20, 20);// background color
+background(255, 255, 255);// background color
 
 loadBoids(50); //loads boids
 }
 
 // Draw runs 30 times a second
 function draw() {
-  background(20, 20, 20);
+  background(255, 255, 255);
   runBoids();
 }
 
