@@ -14,7 +14,7 @@ loadBoids(50); //loads boids
 
 // Draw runs 30 times a second
 function draw() {
-  background(255, 255, 255);
+  background(0, 0, 255);
   runBoids();
 }
 
