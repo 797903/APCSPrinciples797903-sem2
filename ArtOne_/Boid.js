@@ -23,8 +23,8 @@ class Boid{
 }
   render(){
 
-    stroke(100, 200, 10);
-    strokeWeight(3);
+    stroke(random(255), random(255), random(255));
+    strokeWeight(1);
 
     for(var i=0; i<boids.length; i++){
       var distance = this.loc.dist(boids[i].loc);
