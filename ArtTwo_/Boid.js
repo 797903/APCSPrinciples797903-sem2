@@ -10,7 +10,12 @@ class Boid{
     this.render();
   }
   update(){
-    this.loc.add(this.vel);
+    if(mouseClicked === true){
+      this.loc.add(this.vel);
+      this.vel-=0.05;
+      this.loc.x = mouseX;
+      this.loc.y = mouseY;
+    }
   }
 
   checkEdges(){
@@ -30,7 +35,7 @@ class Boid{
     for(var i=0; i<boids.length; i++){
       opacity(j--);
       var distance = this.loc.dist(boids[i].loc);
-      if(distance < 200 && distance !==0){
+      if(distance < 250 && distance !==0){
         line(this.loc.x, this.loc.y, boids[i].loc.x, boids[i].loc.y);
       }
     }
