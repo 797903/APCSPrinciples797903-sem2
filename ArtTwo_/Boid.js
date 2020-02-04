@@ -4,18 +4,12 @@ class Boid{
     this.vel = createVector(dx, dy);
   }
   run(){
-    //console.log("Peace");
     this.update();
     this.checkEdges();
     this.render();
   }
   update(){
-    if(mouseClicked === true){
       this.loc.add(this.vel);
-      this.vel-=0.05;
-      this.loc.x = mouseX;
-      this.loc.y = mouseY;
-    }
   }
 
   checkEdges(){
@@ -27,15 +21,11 @@ class Boid{
   }
 }
   render(){
-    var j = 100;
-    opacity(j);
     stroke(random(255), random(255), random(255));
     strokeWeight(0.25);
-
     for(var i=0; i<boids.length; i++){
-      opacity(j--);
       var distance = this.loc.dist(boids[i].loc);
-      if(distance < 250 && distance !==0){
+      if(distance < 150 && distance !==0){
         line(this.loc.x, this.loc.y, boids[i].loc.x, boids[i].loc.y);
       }
     }

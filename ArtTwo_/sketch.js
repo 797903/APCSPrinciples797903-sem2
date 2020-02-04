@@ -1,41 +1,41 @@
 // Garrett Faure
 // 01/29
 var boids = [];
-var pointX, pointY;
+var value = 0;
+// var pointX, pointY;
 
 // setup runs once at the start of your program
 function setup(){
 // put start code here
 var cnv = createCanvas(800, 800);
 cnv.position((windowWidth-width)/2, 30);
-background(0, 0, 0);// background color
-}
-
-function mouseClicked(){
-  pointX = mouseX;
-  pointY = mouseY;
-  loadBoids(50);
-  return true;
+background(255);// background color
+loadBoids(5);
+frameRate(30)
 }
 
 // Draw runs 30 times a second
-function draw() {
-  //background(0, 0, 0);
-  if(mouseClicked === true){
-    // Boid.loc.x = mouseX;
-    // Boid.loc.y = mouseY;
-    runBoids();
+function draw(){
+  // mouseClicked();\
+  runBoids();
+  if(mouseIsPressed){
+    value = 1;
+    for(var i = 0; i < boids.length; i++){
+      boids[i].loc = createVector(mouseX, mouseY)
+    }
   }
 }
 
 function loadBoids(n){
   for(var i = 0; i < n; i++){
-    boids[i] = new Boid(windowWidth*100, height*100, random(-5, 5), random(-5, 5));
+    boids[i] = new Boid(random(1, 799), random(1, 799), random(-10, 10), random(-10, 10));
   }
 }
 
 function runBoids(){
-  for(var i = 0; i < boids.length; i++){
-    boids[i].run();
+  if(value === 1){
+    for(var i = 0; i < boids.length; i++){
+      boids[i].run();
+    }
   }
 }

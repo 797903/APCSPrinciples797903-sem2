@@ -14,13 +14,13 @@ loadBoids(50); //loads boids
 
 // Draw runs 30 times a second
 function draw() {
-  background(0, 0, 0);
+  //background(0, 0, 0);
   runBoids();
 }
 
 function loadBoids(n){
   for(var i = 0; i < n; i++){
-    boids[i] = new Boid(random(width), random(height), random(-1, 1), random(-1, 1))
+    boids[i] = new Boid(random(width), random(height), random(-10, 10), random(-10, 10))
   }
 }
 

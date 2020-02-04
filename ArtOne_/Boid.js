@@ -24,7 +24,7 @@ class Boid{
   render(){
 
     stroke(random(255), random(255), random(255));
-    strokeWeight(1);
+    strokeWeight(0.05);
 
     for(var i=0; i<boids.length; i++){
       var distance = this.loc.dist(boids[i].loc);
