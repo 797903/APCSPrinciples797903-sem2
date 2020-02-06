@@ -1,11 +1,12 @@
 // Garrett Faure
 // Feb. 5, 2020
-
+var ball = [];
 
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(0);
+  loadBalls(2);
   mousePressed(0, 0);
 }
 
@@ -54,5 +55,11 @@ function mousePressed(e, setD=1) {
       aY: a.y,
       d: random(setD*.5, setD)
     }
+  }
+}
+
+function loadBalls(n){
+  for(var i = 0; i < n; i++){
+    new Ball(random(windowWidth), random(windowHeight));
   }
 }
