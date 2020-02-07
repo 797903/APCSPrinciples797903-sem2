@@ -1,6 +1,6 @@
 // Garrett Faure
 // Feb. 5, 2020
-var ball = [];
+var balls = [];
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -13,6 +13,8 @@ function setup() {
 function draw() {
   background(0);
   j = 0;
+  for(var i = 0; // add here)
+  balls[i].run();
   while(++j<num) {
     target = pos[j];
     target.aX *= .98;
@@ -60,6 +62,6 @@ function mousePressed(e, setD=1) {
 
 function loadBalls(n){
   for(var i = 0; i < n; i++){
-    new Ball(random(windowWidth), random(windowHeight));
+    balls[i] = new Ball(random(windowWidth), random(windowHeight));
   }
 }

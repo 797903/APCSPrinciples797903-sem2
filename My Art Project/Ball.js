@@ -3,7 +3,7 @@ class Ball{
     this.loc = createVector(x, y);
   }
 
-  this.run(){
+  run(){
     this.update();
     this.checkEdges();
     this.render();
@@ -23,8 +23,8 @@ class Ball{
 }
 
   render(){
-    stroke(random(255), random(255), random(255));
-    strokeWeight(0.25);
+    fill(random(255), random(255), random(255));
+    ellipse(35, 35)
     for(var i=0; i<balls.length; i++){
       var distance = this.loc.dist(mouseX, mouseY);
       if(distance < 150 && distance !==0){
