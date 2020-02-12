@@ -27,8 +27,8 @@ class Ball{
     fill(random(255), random(255), random(255));
     ellipse(35, 35)
     for(var i=0; i<balls.length; i++){
-      var distance = this.loc.dist(mouseX, mouseY);
-      if(distance < 150 && distance !==0){
+      let d = int(dist(mouseX, mouseY));
+      if(d < 150 && d !==0){
 // ADD REPULSION
       }
     }
