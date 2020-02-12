@@ -62,6 +62,6 @@ function mousePressed(e, setD=1) {
 
 function loadBalls(n){
   for(var i = 0; i < n; i++){
-    balls[i] = new Ball(random(windowWidth), random(windowHeight));
+    balls[i] = new Ball(random(windowWidth), random(windowHeight), .5, .5);
   }
 }
