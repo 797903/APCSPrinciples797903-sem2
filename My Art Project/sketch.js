@@ -13,8 +13,6 @@ function setup() {
 function draw(){
   background(0);
   j = 0;
-  for(var i = 0; i<balls.length; i++){
-  balls[i].run();
   while(j++<num) {
     target = pos[j];
     target.aX *= .98;
@@ -28,8 +26,7 @@ function draw(){
     target.d *= .98;
     w = target.d*5;
     i = 0;
-  }
-}
+
     while(i++<5) {
       base = 50/i;
       push();
@@ -40,6 +37,10 @@ function draw(){
       pop();
     }
   }
+  for(var i = 0; i<balls.length; i++){
+  balls[i].run();
+  }
+}
 
 function mousePressed(e, setD=1) {
   pos = [];
