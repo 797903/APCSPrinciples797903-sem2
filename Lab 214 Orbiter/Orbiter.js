@@ -1,6 +1,7 @@
 class Orbiter{
-  constructor(r, clr){
+  constructor(r, ang, clr){
     this.r = r;
-    this.clr = clr;
+    this.clr = color(20, 20, 0);
+    this.ang = ang;
   }
 }

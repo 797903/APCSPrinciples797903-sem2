@@ -19,14 +19,12 @@ class Ball{
       this.vel.x = -this.vel.x;
     }
     if(this.loc.y < 0 || this.loc.y > height){
-      this.vel.y = -1*this.vel.y;
+      this.vel.y = -this.vel.y;
   }
 }
 
   render(){
-    strokeWeight(0.5);
-    stroke(100, 50, 190);
+    fill(color(100, 30, 200))
     ellipse(35, 35);
-    fill(100, 50, 190);
     }
   }
