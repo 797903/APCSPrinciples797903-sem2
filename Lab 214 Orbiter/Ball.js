@@ -24,7 +24,7 @@ class Ball{
 }
 
   render(){
-    fill(color(100, 30, 200))
-    ellipse(35, 35);
+    ellipse(this.loc.x, this.loc.y, 40, 40);
+    fill(100, 30, 200);
     }
   }

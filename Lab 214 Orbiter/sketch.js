@@ -13,7 +13,7 @@ function setup() {
 }
 
 function draw(){
-for(var i = 0; i < balls.length; i++){
+for(var i = 0; i < balls.length - 1; i++){
   balls[i].run;
   }
 }
