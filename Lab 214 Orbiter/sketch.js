@@ -23,9 +23,3 @@ function loadBalls(n){
     balls[i] = new Ball(random(800), random(800), .5, .5);
   }
 }
-
-// function loadOrbiters(n){
-//   for(var i = 0; i < n; i++){
-//     orbiters[i] = new Orbiter(30);
-//   }
-// }

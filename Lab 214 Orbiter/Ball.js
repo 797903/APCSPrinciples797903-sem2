@@ -11,7 +11,9 @@ class Ball{
   }
 
   update(){
+    for(var i = 0; i < balls.length - 1; i++){
       this.loc.add(this.vel);
+    }
   }
 
   checkEdges(){
@@ -26,5 +28,15 @@ class Ball{
   render(){
     ellipse(this.loc.x, this.loc.y, 40, 40);
     fill(100, 30, 200);
+    for(var i = 0; i < balls.length - 1; i++){
+      orbiters[i] = new Orbiter(10, PI/2, color(random(255), random(255), random(255)), 0, 0);
     }
   }
+
+  orbRun(){
+    for(var i = 0; i < balls.length - 1; i++){
+      orbiters[i].loc.x = cos(Orbiter.ang)*Orbiter.r;
+      orbiters[i].loc.y = sin(Orbiter.ang)*Orbiter.r;
+    }
+  }
+}
