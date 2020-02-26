@@ -12,7 +12,7 @@ class Ball{
 
   update(){
     for(var i = 0; i < balls.length - 1; i++){
-      this.loc.add(this.vel);
+      balls[i].loc.add(this.vel);
     }
   }
 
@@ -26,8 +26,8 @@ class Ball{
 }
 
   render(){
-    ellipse(this.loc.x, this.loc.y, 40, 40);
     fill(100, 30, 200);
+    ellipse(this.loc.x, this.loc.y, 40, 40);
     for(var i = 0; i < balls.length - 1; i++){
       orbiters[i] = new Orbiter(10, PI/2, color(random(255), random(255), random(255)), 0, 0);
     }
