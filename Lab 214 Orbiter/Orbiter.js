@@ -5,4 +5,12 @@ class Orbiter{
     this.ang = PI/2;
     this.loc = createVector(x, y);
   }
+run(){
+  this.render();
+}
+
+render(){
+  fill(random(255), random(255), random(255));
+  ellipse(this.loc.x, this.loc.y, 2, 2)
+}
 }

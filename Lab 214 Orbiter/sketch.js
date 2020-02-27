@@ -14,12 +14,19 @@ function setup() {
 
 function draw(){
 for(var i = 0; i < balls.length - 1; i++){
-  balls[i].run;
+  balls[i].run();
+  orbiters[i].run();
   }
 }
 
 function loadBalls(n){
   for(var i = 0; i < n; i++){
     balls[i] = new Ball(random(800), random(800), .5, .5);
+  }
+}
+
+function loadOrbiters(n){
+  for(var i = 0; i < n; i++){
+    orbiters[i] = new Orbiter(0, 0, .5, .5);
   }
 }

@@ -6,6 +6,7 @@ class Ball{
 
   run(){
     this.update();
+    this.orbRun();
     this.checkEdges();
     this.render();
   }
