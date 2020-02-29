@@ -6,9 +6,9 @@ class Ball{
 
   run(){
     this.update();
-    this.orbRun();
     this.checkEdges();
     this.render();
+    // this.orbRun();
   }
 
   update(){
@@ -34,10 +34,10 @@ class Ball{
     }
   }
 
-  orbRun(){
-    for(var i = 0; i < balls.length - 1; i++){
-      orbiters[i].loc.x = cos(Orbiter.ang)*Orbiter.r;
-      orbiters[i].loc.y = sin(Orbiter.ang)*Orbiter.r;
-    }
-  }
+  // orbRun(){
+  //   for(var i = 0; i < balls.length - 1; i++){
+  //     orbiters[i].loc.x = cos(Orbiter.ang)*Orbiter.r;
+  //     orbiters[i].loc.y = sin(Orbiter.ang)*Orbiter.r;
+  //   }
+  // }
 }

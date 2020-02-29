@@ -1,16 +1,23 @@
 class Orbiter{
-  constructor(r, ang, clr, x, y){
+  constructor(r, ang, x, y){
     this.r = r;
-    this.clr = color(20, 20, 0);
-    this.ang = PI/2;
+    this.ang = ang;
     this.loc = createVector(x, y);
   }
+
 run(){
+  this.update();
   this.render();
+}
+
+update(){
+  this.ang += 0.05;
 }
 
 render(){
   fill(random(255), random(255), random(255));
-  ellipse(this.loc.x, this.loc.y, 2, 2)
-}
+    for(var i = 0; i < balls.length; i++){
+      ellipse(balls[i].loc.x + cos(this.ang)*this.r, balls[i].loc.y + sin(this.ang)*this.r, 5, 5)
+    }
+  }
 }
