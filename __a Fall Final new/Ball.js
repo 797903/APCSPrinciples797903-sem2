@@ -22,11 +22,11 @@ class Ball{
         this.loc.y = random(0, 500);
       }
     if(){
-      // increases velocity based on direction traveling in.
-    }
-    if(distToShip < 175){
-      this.loc.add(this.vel);
 
+      // increases velocity based on direction traveling in.
+      if(distToShip < 175){
+        this.loc.add(Ship.vel*0.90);
+      }
     }
 
   //     for(var i = 0; i < n; i++){ // no overlapping

@@ -42,8 +42,6 @@ class Ship{
         this.acc.normalize();
         this.acc.mult(0.1);
       }
-
-
     this.vel.add(this.acc)
     this.loc.add(this.vel);
     this.vel.limit(4);
