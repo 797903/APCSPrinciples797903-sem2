@@ -25,15 +25,8 @@ class Ball{
       }
       // increases velocity based on direction traveling in.
         if(distToShip < 175){
-          this.vel.x = Ship.vel.dx;
-          this.vel.y = Ship.vel.dy;
+          this.vel = createVector(Ship.vel.x/1.1, Ship.vel.y/1.1)
       }
-
-  //     for(var i = 0; i < n; i++){ // no overlapping
-  //       for(var j = 0; j < n; j++){
-  //       if(i != j && bigFella[i]
-  //     }
-  //   }
   }
 
   checkEdges(){
