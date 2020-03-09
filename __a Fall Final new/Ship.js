@@ -33,20 +33,22 @@ class Ship{
   }
 
   update(){
-    var distTobigFella = [];
-    for(var i = 0; i < n; i++){
-      distTobigFella[i] = this.loc.dist(bigFella[i].loc);
-      if(distTobigFella[i] < 700){
-        for(var i = 0; i < n; i++){
-        this.acc = p5.Vector.sub(bigFella[i].loc, this.loc);
-        this.acc.normalize();
-        this.acc.mult(0.1);
+    min = 0;
+    for(var i = 0; i < planets.length; i++){
+      distToplanets[i] = this.loc.dist(planets[i].loc);
+      if(i > 0){
+        if(distToplanets[i] < distToplanets[min]){
+          min = i;
+        }
       }
-    this.vel.add(this.acc)
-    this.loc.add(this.vel);
-    this.vel.limit(4);
     }
-  }
+    //attraction
+    this.acc = p5.Vector.sub(planets[min].loc, this.loc);
+    this.acc.normalize();
+    this.acc.mult(.5); // rotation speed multiplier
+    this.vel.add(this.acc);
+    this.vel.limit(6); // vel limit
+    this.loc.add(this.vel);
 }
 
   render(){
