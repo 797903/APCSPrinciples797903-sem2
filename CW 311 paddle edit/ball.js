@@ -24,6 +24,10 @@ class Ball{
 
  run(){
    this.checkEdges();
+   this.update();
+   this.removeBall();
+   this.render();
+
  }
 
 
@@ -41,37 +45,42 @@ class Ball{
       this.vel.y = -this.vel.y;
       this.loc.y = height-2;
     }
-     this.update();
   } //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   isColliding(){
-    if(this.vel.y > 0 &&
-      this.loc.x === paddle.loc.x &&
-      this.loc.y === paddle.loc.y &&
+    if(this.loc.x > paddle.loc.x &&
+      this.loc.x < paddle.loc.x + paddle.w &&
+      this.loc.y > paddle.loc.y &&
+      this.loc.y < paddle.loc.y + paddle.w &&
       this.id%2 === 0){
-        balls.splice(this.id, 1)
+        return true;
+      } else{
+        return false;
       }
+    }
 
-    if(this.vel.y < 0 &&
-      this.loc.x === paddle.loc.x &&
-      this.loc.y === paddle.loc.y &&
-      this.id%2 === 1){
-        balls.splice(this.id, 1)
+    // if(this.vel.y < 0 &&
+    //   this.loc.x === paddle.loc.x &&
+    //   this.loc.y === paddle.loc.y &&
+    //   this.id%2 === 1){
+    //     balls.splice(this.id, 1)
+    //   }
+
+  removeBall(){
+    for(var i = 0; i < balls.length - 1; i++){
+      if(balls[i].isColliding() && this.vel.y > 0){
+        balls.splice(i, 1);
       }
+      if(balls[i].isColliding() && this.vel.y < 0){
+        balls.splice(i, 1);
+      }
+    }
   }
 
   update(){//++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    var distToMainBall;
-    if(this.id >= 0){//  if not mainBall
-
-
-    }
-
     this.vel.add(this.acc);
     this.vel.limit(5);
     this.loc.add(this.vel);
-    this.isColliding();
-    this.render();
   }//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
  render(){
