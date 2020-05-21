@@ -1,11 +1,10 @@
 function setup() {
   createCanvas( 500, 500 );
-  background( 0 );
   mousePressed( 0, 0 );
+  background( 0, 10 );
 }
 
 function draw() {
-  background( 0, 10 );
   j = 0;
   while(++j<num) {
     target = pos[j];
